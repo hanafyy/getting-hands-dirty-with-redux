@@ -16,6 +16,7 @@ function MainAdminPage() {
   const cars = useSelector((state: RootState) => state.cars);
 
   // Filter functions
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const filterItems = (items: any[], key: string) =>
     items.filter((item) =>
       item[key].toLowerCase().includes(searchTerm.toLowerCase())
@@ -29,16 +30,17 @@ function MainAdminPage() {
           type="text"
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
-          placeholder="Search by name or location..."
-          className="w-full p-2 border border-gray-300 rounded"
+          placeholder="Search location..."
+          className="w-full p-2 border border-gray-300 rounded-2xl h-14 "
         />
       </div>
+      <hr />
 
       {/* Flights Section */}
 
       <h2 className="text-2xl font-semibold mb-2">All Flights</h2>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 min-h-52">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 min-h-52">
         {filterItems(flights, "departure").length > 0 ? (
           filterItems(flights, "departure").map((flight) => (
             <FlightCard key={flight.id} {...flight} />
@@ -59,7 +61,7 @@ function MainAdminPage() {
 
       <h2 className="text-2xl font-semibold mb-2">All Hotels</h2>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 min-h-52">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 min-h-52">
         {filterItems(hotels, "location").length > 0 ? (
           filterItems(hotels, "location").map((hotel) => (
             <HotelCard key={hotel.id} {...hotel} />
@@ -80,7 +82,7 @@ function MainAdminPage() {
 
       <h2 className="text-2xl font-semibold mb-2">All Cars</h2>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 min-h-52">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 min-h-52">
         {filterItems(cars, "location").length > 0 ? (
           filterItems(cars, "location").map((car) => (
             <CarRentalCard key={car.id} {...car} />

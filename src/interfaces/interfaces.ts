@@ -44,16 +44,16 @@ export interface CarRental {
 export interface Booking {
   id: string;
   type: "flight" | "hotel" | "car";
-  details: Flight | Hotel | CarRental;
-  status: "confirmed" | "pending" | "canceled";
+  details: Flight  Hotel | CarRental;
+  status: string;
+  userId: string;
 }
 
 export interface UserProfile {
   id: string;
-  name: string;
+  fullName: string;
   email: string;
-  preferences: {
-    flightClass: "economy" | "business" | "first";
-    hotelRating: number;
-  };
+  role: string;
+  password: string;
+  dateAdded: number;
 }

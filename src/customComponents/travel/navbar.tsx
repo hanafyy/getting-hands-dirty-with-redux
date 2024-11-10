@@ -63,6 +63,12 @@ export default function TravelNavbar() {
                 >
                   Payments
                 </NavLink>
+                <NavLink
+                  to="/manage-users"
+                  className="text-gray-500 hover:text-gray-700 px-3 py-2 rounded-md text-sm font-medium"
+                >
+                  users
+                </NavLink>
               </div>
             </div>
           </div>
@@ -146,6 +152,12 @@ export default function TravelNavbar() {
               className="text-gray-500 hover:text-gray-700 block px-3 py-2 rounded-md text-base font-medium"
             >
               Payments
+            </NavLink>
+            <NavLink
+              to="/manage-users"
+              className="text-gray-500 hover:text-gray-700 block px-3 py-2 rounded-md text-base font-medium"
+            >
+              users
             </NavLink>
           </div>
           {/* Mobile menu user section remains the same */}

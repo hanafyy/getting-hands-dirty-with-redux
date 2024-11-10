@@ -14,6 +14,7 @@ export const bookingsSlice = createSlice({
       state.push(action.payload);
       saveToLocalStorage("bookings", state);
     },
+    
     updateBooking: (state, action: PayloadAction<Booking>) => {
       const index = state.findIndex(
         (booking) => booking.id === action.payload.id

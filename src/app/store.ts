@@ -6,6 +6,8 @@ import { bookingsSlice } from "./features/travel/bookingsSlice";
 import { flightSlice } from "./features/travel/flightSlice";
 import { hotelSlice } from "./features/travel/hotelSlice";
 import { carRentalSlice } from "./features/travel/carRentalSlice";
+import { userSlice } from "./features/travel/userSlice";
+import { userLoggedSlice } from "./features/travel/userLoggedSlice";
 
 export const store = configureStore({
   reducer: {
@@ -16,6 +18,8 @@ export const store = configureStore({
     flights: flightSlice.reducer,
     hotels: hotelSlice.reducer,
     cars: carRentalSlice.reducer,
+    users: userSlice.reducer,
+    loggedUser: userLoggedSlice.reducer,
   },
 });
 
